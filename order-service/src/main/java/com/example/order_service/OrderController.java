@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 import org.springframework.web.client.RestClient;
 
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
@@ -20,8 +21,7 @@ public class OrderController {
     public List<Map<String, Object>> getOrders() {
         return List.of(
                 Map.of("id", 101, "productId", 1, "quantity", 2),
-                Map.of("id", 102, "productId", 2, "quantity", 1)
-        );
+                Map.of("id", 102, "productId", 2, "quantity", 1));
     }
 
     @GetMapping("/product/{id}")
